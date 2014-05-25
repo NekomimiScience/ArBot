@@ -1,27 +1,29 @@
 <!DOCTYPE HTML>
 <head>
 <title>Yun Messages</title>
-<script type="text/javascript" src="zepto.min.js"></script>	
+<script type="text/javascript" src="zepto.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css.css">
 </head>
 <body>
-<H1> ARBot v.01</H1> <br>
+<div class="container">
+<h1> ARBot <span>v.01</span></h1>
 Press the buttons to drive me!
-<br>
+<br/>
 <!-- button ID values correspond to the numbers the sketch looks for the URL -->
 <!-- when you click the button it runs the reply_click function -->
-<button id="1" onclick=reply_click(this.id)> Forward </button>
+<div class="button" id="1" onclick=reply_click(this.id)> Forward </div>
 <br>
-<button id="2" onclick=reply_click(this.id)> Left </button>
-<button id="3" onclick=reply_click(this.id)> Right </button>
+<div class="button" id="2" onclick=reply_click(this.id)> Left </div>
+<div class="button" id="3" onclick=reply_click(this.id)> Right </div>
 <br>
-<button id="5" onclick=reply_click(this.id)> Reverse </button>
+<div class="button" id="5" onclick=reply_click(this.id)> Reverse </div>
 <br>
 <br>
-<button id="4" onclick=reply_click(this.id)> STOP! </button>
+<div class="button stop" id="4" onclick=reply_click(this.id)> STOP! </div>
+</div>
 
 
-
-<script type="text/javascript">	
+<script type="text/javascript">
 //setup mode variable
 var mode;
 //get number from button clicked on page, send to sendMsg function for processing
@@ -33,7 +35,7 @@ function reply_click(clicked_id)
     sendMsg(mode);
 }
 
-function sendMsg(mode) {	
+function sendMsg(mode) {
 //change URL to /arduino/mode and append mode number from above
 $.get('/arduino/mode/' + mode + '/',
 	function(){
