@@ -19,27 +19,30 @@ span {
   margin: 50px auto;
   background: whitesmoke;
   padding: 25px;
+  text-align: center;
 }
 
 .button {
-  border: 0 none;
-  border-radius: 2px 2px 2px 2px;
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
   font-family: Arial,sans-serif;
   font-size: 12px;
   font-weight: bold;
-  line-height: 20px;
+  line-height: 100px;
   margin-bottom: 0;
   margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 7px 10px;
   text-transform: none;
   transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -webkit-transition: all 0.3s ease 0s;
-  width: 16.795%; /* auto */
-  text-align: center; /* DELETE WHEN WIDTH AUTO */
+  width: 100px;
+  display:inline-block;
+  text-align: center;
+  
     background: none repeat scroll 0 0 #999999;
     color: #FFFFFF;
   }
@@ -50,4 +53,13 @@ span {
   .button.stop {
     background: #E0645C;
   }
+}
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
 }

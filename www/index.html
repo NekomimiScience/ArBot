@@ -9,17 +9,24 @@
 <h1> ARBot <span>v.01</span></h1>
 Press the buttons to drive me!
 <br/>
+<br/>
 <!-- button ID values correspond to the numbers the sketch looks for the URL -->
 <!-- when you click the button it runs the reply_click function -->
+
+<div class="row">
 <div class="button" id="1" onclick=reply_click(this.id)> Forward </div>
-<br>
+</div>
+
+<div class="row">
 <div class="button" id="2" onclick=reply_click(this.id)> Left </div>
+<div class="button stop" id="4" onclick=reply_click(this.id)> STOP </div>
 <div class="button" id="3" onclick=reply_click(this.id)> Right </div>
-<br>
+</div>
+
+<div class="row">
 <div class="button" id="5" onclick=reply_click(this.id)> Reverse </div>
-<br>
-<br>
-<div class="button stop" id="4" onclick=reply_click(this.id)> STOP! </div>
+</div>
+
 </div>
 
 
@@ -45,5 +52,23 @@ $.get('/arduino/mode/' + mode + '/',
 return false;
 
 }
+
+document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 37) {
+        reply_click(2); //left
+    }
+    else if(event.keyCode == 39) {
+        reply_click(3); //right
+    }
+    else if(event.keyCode == 38) {
+        reply_click(1); //forward
+    }
+    else if(event.keyCode == 40) {
+        reply_click(5); //reverse
+    }
+    else if(event.keyCode == 16) {
+        reply_click(4); //stop
+    }
+});
 </script>
 </body>
